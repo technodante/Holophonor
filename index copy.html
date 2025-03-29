@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-box">
+            <input type="file" id="audio-upload" accept="audio/*">
+            <button class="sendButton">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- =======
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music & YouTube Embed Project</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 20px; 
+      background: #f9f9f9;
+    }
+    h1, h2 { 
+      color: #333;
+    }
+    .section { 
+      margin-bottom: 30px; 
+      padding: 15px; 
+      background: #fff; 
+      border: 1px solid #ddd; 
+      border-radius: 5px;
+    }
+    input[type="text"], input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background: #007BFF;
+      color: #fff;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    iframe {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>My GitHub Project Website</h1>
+  
+  Music Upload Section -->
+  <!-- <div class="section" id="music-upload">
+    <h2>Upload Music</h2>
+    <input type="file" id="musicFile" accept="audio/*">
+    <br>
+    <audio id="audioPlayer" controls style="display: none; width: 100%;"></audio>
+  </div> -->
+  
+  <!-- YouTube Embed Section -->
+  <!-- <div class="section" id="youtube-insert">
+    <h2>Insert YouTube Link</h2>
+    <input type="text" id="youtubeURL" placeholder="Enter YouTube URL">
+    <button onclick="embedYouTube()">Embed Video</button>
+    <div id="youtubeEmbed" style="margin-top: 20px;"></div>
+  </div> -->
+
+  <!-- <script>
+    // Music Upload: Play selected audio file
+    const musicFileInput = document.getElementById('musicFile');
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    musicFileInput.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        audioPlayer.src = url;
+        audioPlayer.style.display = 'block';
+      }
+    }); -->
+
+    <!-- // YouTube Link Embedding: Insert embedded video player
+    function embedYouTube() {
+      const urlInput = document.getElementById('youtubeURL').value;
+      const embedDiv = document.getElementById('youtubeEmbed');
+      let videoId = getYoutubeVideoId(urlInput);
+      if (videoId) {
+        embedDiv.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      } else {
+        embedDiv.innerHTML = '<p style="color: red;">Invalid YouTube URL</p>';
+      }
+    }
+
+    // Helper function: Extract video ID from YouTube URL
+    function getYoutubeVideoId(url) {
+      const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#\&\?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : null;
+    }
+  </script>
+</body>
+</html>
+ -->
