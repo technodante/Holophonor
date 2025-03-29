@@ -1,2 +1,2 @@
-# holophonor
-Inspired by the musical instrument of the same name from Futurama, holophonor allows users to input any song and generate an image based on it.
+# Holophonor
+Inspired by the musical instrument of the same name from Futurama, Holophonor allows users to input any song and generate an image based on it.
