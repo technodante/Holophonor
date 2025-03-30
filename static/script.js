@@ -4,6 +4,12 @@ submitButton.addEventListener("click" , () => {
     sendMessage()
 })
 
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".sendButton").addEventListener("click", function () {
+        window.location.href = "/get_image"; // Redirects to the Flask route that serves the image
+    });
+});
+
 async function sendMessage() {
     const input = document.getElementById("audio-upload");
     const chatBox = document.getElementById("chat-box");
