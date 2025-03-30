@@ -1,3 +1,8 @@
+const reader = new FileReader()
+reader.addEventListener('load', () => {
+
+});
+reader.readAsDataURL();
 const submitButton = document.querySelector(".sendButton")
 
 submitButton.addEventListener("click" , () => {
@@ -34,12 +39,12 @@ async function sendMessage() {
     const input = document.getElementById("audio-upload");
     const chatBox = document.getElementById("chat-box");
     const audio_file = input.files[0];
-    const formData = new FormData()
-    formData.append(audio_file)
+    const formData = new FormData();
+    formData.append("audio", audio_file);
 
-    const image_json = await fetch("http://127.0.0.1:5500/", {
+    const image_json = await fetch("http://127.0.0.1:5500/upload", {
         method: "POST",
-        body: JSON.stringify({ File: input.file[0] }),
+        body: formData,
     });
     
     

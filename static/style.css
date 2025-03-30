@@ -41,7 +41,35 @@ input {
     flex: 1;
     padding: 5px;
 }
-button {
+.sendButton {
     padding: 5px;
     cursor: pointer;
+    color: white;
+    background-color: rgb(86, 86, 251);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.sendButton:hover {
+    background-color: blue 
+}
+
+.inputButton {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(86, 86, 251);
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    width: 75%;
+    text-align: center;
+    transition: background-color 0.3s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.inputButton:hover {
+    background-color: blue 
+}
+
