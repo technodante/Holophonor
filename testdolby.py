@@ -7,13 +7,20 @@ import os
 
 def process_audio():
     load_dotenv()
-
+    
     app_key = os.getenv("APP_KEY")
     app_secret = os.getenv("APP_SECRET")
+
+    if not app_key or not app_secret:
+        raise ValueError("Missing API credentials. Make sure APP_KEY and APP_SECRET are set.")
+
 
     # Ensure the values exist before making a request
     # if not APP_KEY or not APP_SECRET:
     #     raise ValueError("Missing API credentials. Make sure APP_KEY and APP_SECRET are set as environment variables.")
+
+
+
 
     payload = {'grant_type': 'client_credentials', 'expires_in': 1800}
     response = requests.post(
@@ -29,8 +36,6 @@ def process_audio():
     else:
         print("Error:", response.status_code, response.text)
 
-
-    import requests
 
     # Dolby API Token
     api_token = os.getenv("DOLBYIO_API_TOKEN", access_token)  
@@ -49,7 +54,7 @@ def process_audio():
     }
 
     # Request body (dlb:// URL for Dolby storage)
-    body = {"url": "dlb://in/wet_hands.mp3"}
+    body = {"url": "dlb://in/test.mp3"}
 
     # Send request to Dolby API
     response = requests.post(url, json=body, headers=headers)
@@ -91,7 +96,7 @@ def process_audio():
     analyze_url = "https://api.dolby.com/media/analyze/music"
 
     body = {
-        "input": "dlb://in/wet_hands.mp3",
+        "input": "dlb://in/test.mp3",
         "output": "dlb://out/airplane.analysis.json"
     }
 
@@ -120,5 +125,5 @@ def process_audio():
         with open(output_path, "wb") as output_file:
             shutil.copyfileobj(response.raw, output_file)
 
-if __name__ == "__main__":
-    print(process_audio())
+# if __name__ == "__main__":
+#     print(process_audio())

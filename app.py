@@ -31,12 +31,12 @@ def upload_audio():
 
     return jsonify({"message": "File uploaded successfully", "file_path": file_path})
 
-@app.route('/get_image', methods=['GET', 'POST'])
+@app.route('/get_image')
 def get_image():
+  print("he")
   result = testdolby.process_audio()
-
-  if "error" in result:
-    return jsonify({"error": result["error"]}), 400
+  # if "error" in result:
+  #   return jsonify({"error": result["error"]}), 400
   
   # image_url = "https://static.wikia.nocookie.net/villains/images/6/6a/Breaking-bad-hector-angry-last-moments.png"
   image_url = image_gen.gen_image()
