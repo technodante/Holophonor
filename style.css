@@ -6,6 +6,16 @@ body {
     height: 100vh;
     background-color: #4500b4;
 }
+.title {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin: 0;
+    font-size: 2em;
+}
+
 .chat-container {
     width: 300px;
     background: white;
