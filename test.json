@@ -1,0 +1,78 @@
+{
+    "media_info": {
+        "container": {
+            "kind": "none",
+            "duration": 252.395,
+            "bitrate": 320000,
+            "size": 10171036
+        },
+        "audio": {
+            "codec": "mp3",
+            "channels": 2,
+            "sample_rate": 44100,
+            "duration": 252.3951019982993,
+            "bitrate": 320000
+        }
+    },
+    "processed_region": {
+        "start": 0.0,
+        "end": 252.4,
+        "audio": {
+            "music": {
+                "percentage": 98.66,
+                "num_sections": 1,
+                "sections": [
+                    {
+                        "section_id": "mu_1",
+                        "start": 0.0,
+                        "duration": 248.16,
+                        "loudness": -12.01,
+                        "bpm": 52.63,
+                        "key": [
+                            [
+                                "A major",
+                                0.79
+                            ]
+                        ],
+                        "genre": [
+                            [
+                                "rock",
+                                0.28
+                            ],
+                            [
+                                "indie",
+                                0.17
+                            ],
+                            [
+                                "pop",
+                                0.13
+                            ]
+                        ],
+                        "era": [
+                            "80s",
+                            0.05
+                        ],
+                        "instrument": [
+                            [
+                                "vocals",
+                                0.17
+                            ],
+                            [
+                                "guitar",
+                                0.26
+                            ],
+                            [
+                                "piano",
+                                0.11
+                            ],
+                            [
+                                "drums",
+                                0.08
+                            ]
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

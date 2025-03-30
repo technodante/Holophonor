@@ -1,3 +1,4 @@
+import image_gen
 from flask import Flask, jsonify, render_template, request
 import os
 

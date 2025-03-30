@@ -1,20 +1,23 @@
 import requests
 import json
+from dotenv import load_dotenv
 import os
 #use this link for help making key https://docs.dolby.io/media-apis/docs/guides-api-authentication
 # Fetch environment variables correctly
-APP_KEY = os.environ.get("APP_KEY")
-APP_SECRET = os.environ.get("APP_SECRET")
+load_dotenv()
+
+app_key = os.getenv("APP_KEY")
+app_secret = os.getenv("APP_SECRET")
 
 # Ensure the values exist before making a request
-if not APP_KEY or not APP_SECRET:
-    raise ValueError("Missing API credentials. Make sure APP_KEY and APP_SECRET are set as environment variables.")
+# if not APP_KEY or not APP_SECRET:
+#     raise ValueError("Missing API credentials. Make sure APP_KEY and APP_SECRET are set as environment variables.")
 
 payload = {'grant_type': 'client_credentials', 'expires_in': 1800}
 response = requests.post(
     'https://api.dolby.io/v1/auth/token',
     data=payload,
-    auth=requests.auth.HTTPBasicAuth(APP_KEY, APP_SECRET)
+    auth=requests.auth.HTTPBasicAuth(app_key, app_secret)
 )
 
 if response.status_code == 200:
@@ -31,7 +34,7 @@ import requests
 api_token = os.getenv("DOLBYIO_API_TOKEN", access_token)  
 
 # File to upload
-file_path = "C:/Users/Maxem/Downloads/test.mp3"
+file_path = "wet_hands.mp3"
 
 # Dolby API URL to get a pre-signed upload URL
 url = "https://api.dolby.com/media/input"
@@ -44,7 +47,7 @@ headers = {
 }
 
 # Request body (dlb:// URL for Dolby storage)
-body = {"url": "dlb://in/test.mp3"}
+body = {"url": "dlb://in/wet_hands.mp3"}
 
 # Send request to Dolby API
 response = requests.post(url, json=body, headers=headers)
@@ -86,7 +89,7 @@ print("✅ Upload successful!")
 analyze_url = "https://api.dolby.com/media/analyze/music"
 
 body = {
-    "input": "dlb://in/test.mp3",
+    "input": "dlb://in/wet_hands.mp3",
     "output": "dlb://out/airplane.analysis.json"
 }
 
@@ -100,7 +103,7 @@ else:
 
 import shutil
 
-output_path = "C:/Users/Maxem/Downloads/test.json"
+output_path = "test.json"
 
 url = "https://api.dolby.com/media/output"
 
