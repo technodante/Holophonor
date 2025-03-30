@@ -1,9 +1,27 @@
-const reader = new FileReader()
-reader.addEventListener('load', () => {
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".sendButton").addEventListener("click", function () {
+        const fileInput = document.getElementById("audio-upload");
+        const file = fileInput.files[0];
 
+        if (!file) {
+            console.error("No file selected");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("audio", file);
+
+        fetch("/upload_audio", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Upload response:", data);
+        })
+        .catch(error => console.error("Error uploading file:", error));
+    });
 });
-reader.readAsDataURL();
-// code above breaks image retrieval currently
 
 const submitButton = document.querySelector(".sendButton")
 
