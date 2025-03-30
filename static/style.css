@@ -20,6 +20,20 @@ body {
     padding-bottom: 10px;
     margin-bottom: 10px;
 }
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent extra spacing */
+}
+#generated-image {
+    max-width: 100%;
+    height: auto;
+    display: none; /* Hide initially */
+    object-fit: cover; /* Ensures proper scaling */
+    border-radius: 10px; /* Optional */
+}
 .input-box {
     display: flex;
 }

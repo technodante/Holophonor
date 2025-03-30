@@ -5,8 +5,28 @@ submitButton.addEventListener("click" , () => {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".sendButton").addEventListener("click", function () {
-        window.location.href = "/get_image"; // Redirects to the Flask route that serves the image
+    const sendButton = document.querySelector(".sendButton");
+    const imgElement = document.getElementById("generated-image");
+
+    sendButton.addEventListener("click", function () {
+        fetch("/get_image")
+            .then(response => response.json())
+            .then(data => {
+                console.log("Image URL received:", data.image_url);
+                imgElement.style.display = "none"; // Hide image initially
+                imgElement.src = data.image_url;
+
+                imgElement.onload = function () {
+                    console.log("Image loaded successfully");
+                    imgElement.style.display = "block"; // Show when loaded
+                };
+
+                imgElement.onerror = function () {
+                    console.error("Error loading image:", imgElement.src);
+                    imgElement.style.display = "none";
+                };
+            })
+            .catch(error => console.error("Error fetching image:", error));
     });
 });
 

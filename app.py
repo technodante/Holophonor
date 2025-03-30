@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_file, url_for
+from flask import Flask, jsonify, render_template, send_file, url_for
 import io
 import requests
 
@@ -8,18 +8,10 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/get_image') # access with http://127.0.0.1:5000/generated_image
+@app.route('/get_image')
 def get_image():
-  image_url = "https://static.wikia.nocookie.net/villains/images/6/6a/Breaking-bad-hector-angry-last-moments.png/revision/latest/scale-to-width-down/250?cb=20240803223139"
-  response = requests.get(image_url, stream=True)
-
-  if response.status_code == 200:
-    img_io = io.BytesIO()
-    img_io.write(response.content)
-    img_io.seek(0)
-    return send_file(img_io, mimetype='image/png')
-  else:
-    return "Error fetching image", response.status_code
+  image_url = "https://static.wikia.nocookie.net/villains/images/6/6a/Breaking-bad-hector-angry-last-moments.png"
+  return jsonify({'image_url': image_url})
 
 if __name__ == '__main__':
   app.run(debug = True)
