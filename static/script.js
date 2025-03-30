@@ -3,6 +3,8 @@ reader.addEventListener('load', () => {
 
 });
 reader.readAsDataURL();
+// code above breaks image retrieval currently
+
 const submitButton = document.querySelector(".sendButton")
 
 submitButton.addEventListener("click" , () => {

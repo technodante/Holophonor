@@ -1,6 +1,4 @@
-from flask import Flask, jsonify, render_template, send_file, url_for
-import io
-import requests
+from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
