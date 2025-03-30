@@ -34,7 +34,7 @@ import requests
 api_token = os.getenv("DOLBYIO_API_TOKEN", access_token)  
 
 # File to upload
-file_path = "wet_hands.mp3"
+file_path = "uploads/test.mp3"
 
 # Dolby API URL to get a pre-signed upload URL
 url = "https://api.dolby.com/media/input"

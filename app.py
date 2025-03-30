@@ -19,9 +19,12 @@ def upload_audio():
     
     if audio_file.filename == '':
         return jsonify({"error": "No selected file"}), 400
+    
+    if not audio_file.filename.lower().endswith('.mp3'):
+        return jsonify({"error": "Only MP3 files are allowed"}), 400
 
     # Save the audio file
-    file_path = os.path.join(UPLOAD_FOLDER, audio_file.filename)
+    file_path = os.path.join(UPLOAD_FOLDER, "test.mp3")
     audio_file.save(file_path)
 
     return jsonify({"message": "File uploaded successfully", "file_path": file_path})
