@@ -26,7 +26,7 @@ def upload_audio():
 
     return jsonify({"message": "File uploaded successfully", "file_path": file_path})
 
-@app.route('/get_image')
+@app.route('/get_image', methods=['GET', 'POST'])
 def get_image():
   image_url = "https://static.wikia.nocookie.net/villains/images/6/6a/Breaking-bad-hector-angry-last-moments.png"
   print("image retrieved")

@@ -2,72 +2,64 @@
     "media_info": {
         "container": {
             "kind": "none",
-            "duration": 252.395,
-            "bitrate": 320000,
-            "size": 10171036
+            "duration": 90.07,
+            "bitrate": 192000,
+            "size": 2162448
         },
         "audio": {
             "codec": "mp3",
             "channels": 2,
             "sample_rate": 44100,
-            "duration": 252.3951019982993,
-            "bitrate": 320000
+            "duration": 90.07,
+            "bitrate": 192000
         }
     },
     "processed_region": {
         "start": 0.0,
-        "end": 252.4,
+        "end": 90.07,
         "audio": {
             "music": {
-                "percentage": 98.66,
+                "percentage": 97.85,
                 "num_sections": 1,
                 "sections": [
                     {
                         "section_id": "mu_1",
                         "start": 0.0,
-                        "duration": 248.16,
-                        "loudness": -12.01,
-                        "bpm": 52.63,
+                        "duration": 87.36,
+                        "loudness": -19.09,
+                        "bpm": 74.07,
                         "key": [
                             [
                                 "A major",
-                                0.79
+                                0.55
                             ]
                         ],
                         "genre": [
                             [
-                                "rock",
+                                "jazz",
                                 0.28
                             ],
                             [
-                                "indie",
-                                0.17
+                                "instrumental",
+                                0.19
                             ],
                             [
-                                "pop",
-                                0.13
+                                "ambient",
+                                0.14
                             ]
-                        ],
-                        "era": [
-                            "80s",
-                            0.05
                         ],
                         "instrument": [
                             [
-                                "vocals",
-                                0.17
+                                "piano",
+                                0.75
                             ],
                             [
                                 "guitar",
-                                0.26
+                                0.14
                             ],
                             [
-                                "piano",
-                                0.11
-                            ],
-                            [
-                                "drums",
-                                0.08
+                                "strings",
+                                0.06
                             ]
                         ]
                     }

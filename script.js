@@ -23,12 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const submitButton = document.querySelector(".sendButton")
-
-submitButton.addEventListener("click" , () => {
-    sendMessage()
-})
-
 document.addEventListener("DOMContentLoaded", function () {
     const sendButton = document.querySelector(".sendButton");
     const imgElement = document.getElementById("generated-image");
@@ -55,26 +49,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-async function sendMessage() {
-    const input = document.getElementById("audio-upload");
-    const chatBox = document.getElementById("chat-box");
-    const audio_file = input.files[0];
-    const formData = new FormData();
-    formData.append("audio", audio_file);
+// async function sendMessage() {
+//     const input = document.getElementById("audio-upload");
+//     const chatBox = document.getElementById("chat-box");
+//     const audio_file = input.files[0];
+//     const formData = new FormData();
+//     formData.append("audio", audio_file);
 
-    const image_json = await fetch("http://127.0.0.1:5500/upload", {
-        method: "POST",
-        body: formData,
-    });
+//     const image_json = await fetch("http://127.0.0.1:5500/upload", {
+//         method: "POST",
+//         body: formData,
+//     });
     
     
-    let userMessage = `<p><strong>You:</strong> ${audio_file}</p>`;
-    chatBox.innerHTML += userMessage;
-    input.value = "";
+//     let userMessage = `<p><strong>You:</strong> ${audio_file}</p>`;
+//     chatBox.innerHTML += userMessage;
+//     input.value = "";
     
-    setTimeout(() => {
-        let botMessage = `<p><strong>Bot:</strong> Hello! How can I help?</p>`;
-        chatBox.innerHTML += botMessage;
-        chatBox.scrollTop = chatBox.scrollHeight;
-    }, 1000);
-}
+//     setTimeout(() => {
+//         let botMessage = `<p><strong>Bot:</strong> Hello! How can I help?</p>`;
+//         chatBox.innerHTML += botMessage;
+//         chatBox.scrollTop = chatBox.scrollHeight;
+//     }, 1000);
+// }

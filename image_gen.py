@@ -69,15 +69,15 @@ elif bpm < 168:
     bpm_word = "Allegro"
 else:
     bpm_word = "Presto"
-key = section["key"]
-key_word = number_to_word(key[1]) + " "+ key[0]
+keym = section["key"]
+key_word = number_to_word(keym[0][1]) + " "+ keym[0][0]
 genre = section["genre"]
 genre_word = ""
 for i in genre:
     genre_word += i[0] + " " + number_to_word(i[1]) + ","
 genre_word = "."
-era = section["era"]
-era_word = number_to_word(era[1]) + " " + era[0]
+# era = section["era"]
+# era_word = number_to_word(era[0][1]) + " " + era[0][0]
 instrument = section["instrument"]
 instrument_word = ""
 for i in instrument:
@@ -88,7 +88,7 @@ print("Loudness:", loudness)
 print("BPM:", bpm)
 print("Key:", key)
 print("Genre:", genre)
-print("Era:", era)
+#print("Era:", era)
 print("Instrument:", instrument)
 
 
@@ -102,7 +102,7 @@ You want to make your art appreciated by the audience, especially the people who
 music_info = f'''\
 {persona} {guidelines}
 
-The music provided to you is a {loudness_word}, {bpm_word} piece in the key of {key_word}. The genre is {genre_word}, and it is {era_word} era. The instruments used are {instrument_word}. Don't make the prompt longer than 4 sentences, and don't make them needlessly complicated.'''
+The music provided to you is a {loudness_word}, {bpm_word} piece in the key of {key_word}. The genre is {genre_word}, and its instruments used are {instrument_word}. Don't make the prompt longer than 4 sentences, and don't make them needlessly complicated.'''
 
 prompt = generate(model, music_info).text
 
@@ -129,7 +129,9 @@ def sendImage():
     response = requests.post('https://api.thehive.ai/api/v3/hive/sdxl-enhanced', headers=headers, json=json_data)
     json_response = response.json()
     image_urls = [entry["url"] for entry in json_response.get("output", [])]
+    print(image_urls)
     return image_urls[0]
 
-# print(image_urls)
+sendImage()
+
 # print("abel")
