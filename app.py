@@ -1,6 +1,8 @@
 import image_gen
 from flask import Flask, jsonify, render_template, request
 import os
+import testdolby
+import image_gen
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
@@ -31,7 +33,13 @@ def upload_audio():
 
 @app.route('/get_image', methods=['GET', 'POST'])
 def get_image():
-  image_url = "https://static.wikia.nocookie.net/villains/images/6/6a/Breaking-bad-hector-angry-last-moments.png"
+  result = testdolby.process_audio()
+
+  if "error" in result:
+    return jsonify({"error": result["error"]}), 400
+  
+  # image_url = "https://static.wikia.nocookie.net/villains/images/6/6a/Breaking-bad-hector-angry-last-moments.png"
+  image_url = image_gen.gen_image()
   print("image retrieved")
   return jsonify({'image_url': image_url})
 
